@@ -56,5 +56,15 @@ public class Main {
         Course potionsCourse = new Course(potions,slughorn, new Student[]{harry,ron,hermione});
         // add to array
         courses = new Course[]{potionsCourse};
+
+        // Teaching materials
+        TextBook advancedPotionsMaking = new TextBook("Advanced Potion-Making",true,true,false,"Libatius Borage","Merge Books",1946);
+        Tool cauldron = new Tool("Cauldron", false, true,true,null);
+        Tool spoon = new Tool("Silver spoon", false, true,true,null);
+        Ingredient shrivelfig = new Ingredient("Shrivelfig", true, true,false, 1,"Leaves");
+        Ingredient porcupineQuills = new Ingredient("Porcupine quills", true, false,true, 2,"Spines");
+        Ingredient peppermint = new Ingredient("Peppermint", true, true,false, 1,"Leaves");
+        Ingredient sopophorousBean = new Ingredient("Sopophorous Bean", true, false,true, 1,"Pieces");
+        Ingredient wormwood = new Ingredient("Infusion of wormwood", true, false,true, 10,"ml");
     }
 }
