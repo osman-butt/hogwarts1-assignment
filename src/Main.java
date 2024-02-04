@@ -46,5 +46,8 @@ public class Main {
         // add to array
         teachers = new HogwartsTeacher[]{slughorn,snape};
 
+        // Subjects
+        Subject potions = new Subject("Potions", 6,false);
+
     }
 }
