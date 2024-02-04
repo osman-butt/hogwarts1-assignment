@@ -1,7 +1,6 @@
 package edu.hogwarts;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Teacher extends Person {
     private EmpType employment;

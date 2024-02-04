@@ -5,11 +5,14 @@ import java.time.LocalDate;
 public class Main {
     private HogwartsStudent[] students;
     private House[] houses;
+    private HogwartsTeacher[] teachers;
+
     public static void main(String[] args) {
         Main app = new Main();
-        app.initApp();
+        app.initApp(); // generate instances w/hard coded data
+        System.out.println("Number of houses: "+app.houses.length);
         System.out.println("Number of students: "+app.students.length);
-        System.out.println(app.students[0].toString());
+        System.out.println("Number of teachers: "+app.teachers.length);
     }
 
     public void initApp() {
@@ -38,7 +41,10 @@ public class Main {
         students = new HogwartsStudent[]{harry,ron,hermione,padma,draco,crabbe,goyle,justin,seamus,neville,parvati,pansy};
 
         // Create Hogwarts Teacher
-        Teacher slughorn = new Teacher("Horace Slughorn",EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"));
-        Teacher snape = new Teacher("Severus Snape",EmpType.PROFESSOR, LocalDate.parse("1980-01-01"),LocalDate.parse("2005-01-01"));
+        HogwartsTeacher slughorn = new HogwartsTeacher("Horace Slughorn",EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"),slytherin,true);
+        HogwartsTeacher snape = new HogwartsTeacher("Severus Snape",EmpType.PROFESSOR, LocalDate.parse("1980-01-01"),LocalDate.parse("2005-01-01"),slytherin,false);
+        // add to array
+        teachers = new HogwartsTeacher[]{slughorn,snape};
+
     }
 }
