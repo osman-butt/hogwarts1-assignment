@@ -17,7 +17,18 @@ public class Main {
         System.out.println("Number of students: "+app.students.length);
         System.out.println("Number of teachers: "+app.teachers.length);
         System.out.println("Number of courses: " + app.courses.length);
-        System.out.println("--------------------------");
+        System.out.println();
+        System.out.println("----- Potions course -----");
+        Course potions = app.courses[0];
+        System.out.println("Course: "+potions.toString());
+        System.out.println("--- Materials ---");
+        for (TeachingMaterial material : potions.getMaterials()){
+            System.out.println("- "+ material.getName() + " - required: " + material.isRequired());
+        }
+        System.out.println("--- Students ---");
+        for (Student student : potions.getStudents()) {
+            System.out.println("- " + student.getFullName());
+        }
     }
 
     public void initApp() {
@@ -53,9 +64,6 @@ public class Main {
 
         // Subjects
         Subject potions = new Subject("Potions", 6,false);
-        Course potionsCourse = new Course(potions,slughorn, new Student[]{harry,ron,hermione});
-        // add to array
-        courses = new Course[]{potionsCourse};
 
         // Teaching materials
         TextBook advancedPotionsMaking = new TextBook("Advanced Potion-Making",true,true,false,"Libatius Borage","Merge Books",1946);
@@ -66,5 +74,12 @@ public class Main {
         Ingredient peppermint = new Ingredient("Peppermint", true, true,false, 1,"Leaves");
         Ingredient sopophorousBean = new Ingredient("Sopophorous Bean", true, false,true, 1,"Pieces");
         Ingredient wormwood = new Ingredient("Infusion of wormwood", true, false,true, 10,"ml");
+
+        TeachingMaterial[] potionsMaterial = new TeachingMaterial[]{advancedPotionsMaking,cauldron,spoon,shrivelfig,porcupineQuills,peppermint,sopophorousBean,wormwood};
+
+
+        Course potionsCourse = new Course(potions,slughorn, students, potionsMaterial);
+        // add to array
+        courses = new Course[]{potionsCourse};
     }
 }
