@@ -7,28 +7,32 @@ public class Student extends Person {
     private int graduationYear;
     private boolean graduated = false;
 
-    public Student(String fullName, int enrollmentYear, int graduationYear) {
+    public Student(String fullName, int enrollmentYear, int graduationYear,boolean graduated) {
         super(fullName);
         this.enrollmentYear = enrollmentYear;
         this.graduationYear = graduationYear;
+        this.graduated = graduated;
     }
 
-    public Student(String firstName, String lastName, int enrollmentYear, int graduationYear) {
+    public Student(String firstName, String lastName, int enrollmentYear, int graduationYear,boolean graduated) {
         super(firstName, lastName);
         this.enrollmentYear = enrollmentYear;
         this.graduationYear = graduationYear;
+        this.graduated = graduated;
     }
 
-    public Student(String firstName, String middleName, String lastName, int enrollmentYear, int graduationYear) {
+    public Student(String firstName, String middleName, String lastName, int enrollmentYear, int graduationYear,boolean graduated) {
         super(firstName, middleName, lastName);
         this.enrollmentYear = enrollmentYear;
         this.graduationYear = graduationYear;
+        this.graduated = graduated;
     }
 
-    public Student(Person person, int enrollmentYear, int graduationYear) {
+    public Student(Person person, int enrollmentYear, int graduationYear,boolean graduated) {
         super(person);
         this.enrollmentYear = enrollmentYear;
         this.graduationYear = graduationYear;
+        this.graduated = graduated;
     }
 
     public int getEnrollmentYear() {
@@ -53,5 +57,9 @@ public class Student extends Person {
 
     private void setGraduated(boolean graduated) {
         this.graduated = graduated;
+    }
+
+    public String toString() {
+        return super.toString() + ", Enrollment year: " +getEnrollmentYear() +  ", Graduated: " + isGraduated() + ", Graduation year: "+ getGraduationYear();
     }
 }

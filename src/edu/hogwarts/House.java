@@ -34,4 +34,8 @@ public class House {
     public void setColors(String[] colors) {
         this.colors = colors;
     }
+
+    public String toString() {
+        return getName();
+    }
 }

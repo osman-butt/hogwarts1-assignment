@@ -27,14 +27,6 @@ public class Person {
         this.lastName = person.getLastName();
     }
 
-    public String toString() {
-        if(hasMiddleName()) {
-            return firstName + " " + middleName + " " + lastName;
-        } else {
-            return firstName + " " + lastName;
-        }
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -80,5 +72,9 @@ public class Person {
 
     public boolean hasMiddleName() {
         return middleName != null;
+    }
+
+    public String toString() {
+        return "Fullname: "+ getFullName();
     }
 }
