@@ -7,12 +7,17 @@ public class Main {
     private House[] houses;
     private HogwartsTeacher[] teachers;
 
+    private Course[] courses;
+
     public static void main(String[] args) {
         Main app = new Main();
         app.initApp(); // generate instances w/hard coded data
+        System.out.println("------- Statistics -------");
         System.out.println("Number of houses: "+app.houses.length);
         System.out.println("Number of students: "+app.students.length);
         System.out.println("Number of teachers: "+app.teachers.length);
+        System.out.println("Number of courses: " + app.courses.length);
+        System.out.println("--------------------------");
     }
 
     public void initApp() {
@@ -48,6 +53,8 @@ public class Main {
 
         // Subjects
         Subject potions = new Subject("Potions", 6,false);
-
+        Course potionsCourse = new Course(potions,slughorn, new Student[]{harry,ron,hermione});
+        // add to array
+        courses = new Course[]{potionsCourse};
     }
 }

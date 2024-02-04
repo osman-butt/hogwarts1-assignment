@@ -36,6 +36,6 @@ public class Course {
     }
 
     public String toString() {
-        
+        return "Course: " + getSubject().getName() + ", Year: "+ subject.getSchoolYear() + ", Taught by: " +  getTeacher().getFullName() + ", Enrolled students: "+students.length;
     }
 }
