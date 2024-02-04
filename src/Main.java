@@ -1,7 +1,6 @@
-import edu.hogwarts.HogwartsStudent;
-import edu.hogwarts.House;
-import edu.hogwarts.Person;
-import edu.hogwarts.Student;
+import edu.hogwarts.*;
+
+import java.time.LocalDate;
 
 public class Main {
     private HogwartsStudent[] students;
@@ -22,7 +21,7 @@ public class Main {
         // Add to array
         houses = new House[]{gryffindor,ravenclaw,slytherin,hufflepuff};
 
-        // Create students
+        // Create Hogwarts students
         HogwartsStudent harry = new HogwartsStudent("Harry Potter",1991,0,false,gryffindor,false,null);
         HogwartsStudent ron = new HogwartsStudent("Ron Weasley",1991,0,false,gryffindor,false,null);
         HogwartsStudent hermione = new HogwartsStudent("Hermione Granger",1991,1999,true,gryffindor,true,null);
@@ -37,5 +36,9 @@ public class Main {
         HogwartsStudent pansy = new HogwartsStudent("Pansy Parkinson",1991,1998,true,slytherin,true,null);
         // Add to array
         students = new HogwartsStudent[]{harry,ron,hermione,padma,draco,crabbe,goyle,justin,seamus,neville,parvati,pansy};
+
+        // Create Hogwarts Teacher
+        Teacher slughorn = new Teacher("Horace Slughorn",EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"));
+        Teacher snape = new Teacher("Severus Snape",EmpType.PROFESSOR, LocalDate.parse("1980-01-01"),LocalDate.parse("2005-01-01"));
     }
 }

@@ -52,4 +52,8 @@ public class Teacher extends Person {
     public void setEmploymentEnd(LocalDate employmentEnd) {
         this.employmentEnd = employmentEnd;
     }
+
+    public String toString() {
+        return super.toString() + ", Employment type: " + employment + ", Employment start: " + getEmploymentStart() + ", Employment end: "+ getEmploymentEnd();
+    }
 }
