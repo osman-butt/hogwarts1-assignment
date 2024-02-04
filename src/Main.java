@@ -12,6 +12,8 @@ public class Main {
     public static void main(String[] args) {
         Main app = new Main();
         app.initApp(); // generate instances w/hard coded data
+
+        // Print statement for hard coded data
         System.out.println("------- Statistics -------");
         System.out.println("Number of houses: "+app.houses.length);
         System.out.println("Number of students: "+app.students.length);
