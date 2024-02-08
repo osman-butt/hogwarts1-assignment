@@ -26,18 +26,18 @@ public class InitApp {
         House slytherin = new House("Slytherin","Salazar Slytherin",new String[]{"Green","Silver"} );
         House hufflepuff = new House("Hufflepuff","Helga Hufflepuff",new String[]{"Yellow","Black"} );
         // Create Hogwarts students
-        HogwartsStudent harry = new HogwartsStudent("Harry Potter",1991,0,false,gryffindor,false,null);
-        HogwartsStudent ron = new HogwartsStudent("Ron Weasley",1991,0,false,gryffindor,false,null);
-        HogwartsStudent hermione = new HogwartsStudent("Hermione Granger",1991,1999,true,gryffindor,true,null);
-        HogwartsStudent padma = new HogwartsStudent("Padma Patil",1991,1998,true,ravenclaw,true,null);
-        HogwartsStudent draco = new HogwartsStudent("Draco Malfoy",1991,1998,true,slytherin,true,null);
-        HogwartsStudent crabbe = new HogwartsStudent("Vincent Crabbe",1991,0,false,slytherin,true,null);
-        HogwartsStudent goyle = new HogwartsStudent("Gregory Goyle",1991,1998,true,slytherin,true,null);
-        HogwartsStudent justin = new HogwartsStudent("Justin Finch-Fletchley",1991,1998,true,hufflepuff,false,null);
-        HogwartsStudent seamus = new HogwartsStudent("Seamus Finnigan",1991,1998,true,gryffindor,false,null);
-        HogwartsStudent neville = new HogwartsStudent("Neville Longbottom",1991,1998,true,gryffindor,false,null);
-        HogwartsStudent parvati = new HogwartsStudent("Parvati Patil",1991,1998,true,gryffindor,true,null);
-        HogwartsStudent pansy = new HogwartsStudent("Pansy Parkinson",1991,1998,true,slytherin,true,null);
+        studentController.create(new HogwartsStudent("Harry Potter",1991,0,false,gryffindor,false,null));
+        studentController.create(new HogwartsStudent("Ron Weasley",1991,0,false,gryffindor,false,null));
+        studentController.create(new HogwartsStudent("Hermione Granger",1991,1999,true,gryffindor,true,null));
+        studentController.create(new HogwartsStudent("Padma Patil",1991,1998,true,ravenclaw,true,null));
+        studentController.create(new HogwartsStudent("Draco Malfoy",1991,1998,true,slytherin,true,null));
+        studentController.create(new HogwartsStudent("Vincent Crabbe",1991,0,false,slytherin,true,null));
+        studentController.create(new HogwartsStudent("Gregory Goyle",1991,1998,true,slytherin,true,null));
+        studentController.create(new HogwartsStudent("Justin Finch-Fletchley",1991,1998,true,hufflepuff,false,null));
+        studentController.create(new HogwartsStudent("Seamus Finnigan",1991,1998,true,gryffindor,false,null));
+        studentController.create(new HogwartsStudent("Neville Longbottom",1991,1998,true,gryffindor,false,null));
+        studentController.create(new HogwartsStudent("Parvati Patil",1991,1998,true,gryffindor,true,null));
+        studentController.create(new HogwartsStudent("Pansy Parkinson",1991,1998,true,slytherin,true,null));
     }
 
     private void initTeachersData() {
@@ -47,8 +47,8 @@ public class InitApp {
         House slytherin = new House("Slytherin","Salazar Slytherin",new String[]{"Green","Silver"} );
 //        House hufflepuff = new House("Hufflepuff","Helga Hufflepuff",new String[]{"Yellow","Black"} );
         // Create Hogwarts Teacher
-        HogwartsTeacher slughorn = new HogwartsTeacher("Horace Slughorn", EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"),slytherin,true);
-        HogwartsTeacher snape = new HogwartsTeacher("Severus Snape",EmpType.PROFESSOR, LocalDate.parse("1980-01-01"),LocalDate.parse("2005-01-01"),slytherin,false);
+        teacherController.create(new HogwartsTeacher("Horace Slughorn", EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"),slytherin,true));
+        teacherController.create(new HogwartsTeacher("Severus Snape",EmpType.PROFESSOR, LocalDate.parse("1980-01-01"),LocalDate.parse("2005-01-01"),slytherin,false));
 
     }
 
