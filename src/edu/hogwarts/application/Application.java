@@ -6,8 +6,9 @@ import edu.hogwarts.controller.TeacherController;
 public class Application {
 
     // Controller attributes
-    TeacherController teacherController;
-    StudentController studentController;
+    TeacherController teacherController = new TeacherController();
+    StudentController studentController = new StudentController();
+    InitApp initApp;
 
     public static void main(String[] args) {
         Application app = new Application();
@@ -15,9 +16,8 @@ public class Application {
     }
 
     public void start() {
-        studentController = new StudentController();
-        teacherController = new TeacherController();
-        var initApp = new InitApp();
+        // InitApp should use dependency injection
+        initApp = new InitApp(studentController,teacherController);
         initApp.initData();
     }
 
