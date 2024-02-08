@@ -1,4 +1,4 @@
-# Hogwarts part1 - assignment
+# Hogwarts - assignment
 
 Implementation of a hogwarts student administration system, based on the following class diagram:
 
