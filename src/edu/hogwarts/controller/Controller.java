@@ -7,5 +7,5 @@ public interface Controller<T> {
     T get(UUID id);
     ArrayList<T> getAll();
     void update(UUID id,T object);
-    void delete(UUID id,T object);
+    void delete(UUID id);
 }
