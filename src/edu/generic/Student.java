@@ -1,6 +1,4 @@
-package edu.hogwarts;
-
-import java.time.LocalDate;
+package edu.generic;
 
 public class Student extends Person {
     private int enrollmentYear;

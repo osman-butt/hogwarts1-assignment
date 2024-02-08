@@ -1,4 +1,7 @@
-package edu.hogwarts;
+package edu.hogwarts.data;
+
+import edu.generic.Person;
+import edu.generic.Student;
 
 public class HogwartsStudent extends Student implements HogwartsPerson {
     private House house;

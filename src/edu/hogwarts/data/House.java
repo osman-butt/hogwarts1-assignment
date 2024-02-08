@@ -1,4 +1,4 @@
-package edu.hogwarts;
+package edu.hogwarts.data;
 
 public class House {
     private String name;

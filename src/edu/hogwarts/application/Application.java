@@ -1,8 +1,11 @@
-import edu.hogwarts.*;
+package edu.hogwarts.application;
+
+import edu.generic.Student;
+import edu.hogwarts.data.*;
 
 import java.time.LocalDate;
 
-public class Main {
+public class Application {
     private HogwartsStudent[] students;
     private House[] houses;
     private HogwartsTeacher[] teachers;
@@ -10,7 +13,7 @@ public class Main {
     private Course[] courses;
 
     public static void main(String[] args) {
-        Main app = new Main();
+        Application app = new Application();
         app.initApp(); // generate instances w/hard coded data
 
         // Print statement for hard coded data
@@ -59,7 +62,7 @@ public class Main {
         students = new HogwartsStudent[]{harry,ron,hermione,padma,draco,crabbe,goyle,justin,seamus,neville,parvati,pansy};
 
         // Create Hogwarts Teacher
-        HogwartsTeacher slughorn = new HogwartsTeacher("Horace Slughorn",EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"),slytherin,true);
+        HogwartsTeacher slughorn = new HogwartsTeacher("Horace Slughorn", EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"),slytherin,true);
         HogwartsTeacher snape = new HogwartsTeacher("Severus Snape",EmpType.PROFESSOR, LocalDate.parse("1980-01-01"),LocalDate.parse("2005-01-01"),slytherin,false);
         // add to array
         teachers = new HogwartsTeacher[]{slughorn,snape};
