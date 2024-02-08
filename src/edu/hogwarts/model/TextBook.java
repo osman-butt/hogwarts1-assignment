@@ -1,4 +1,4 @@
-package edu.hogwarts.data;
+package edu.hogwarts.model;
 
 public class TextBook extends TeachingMaterial {
     private String author;
