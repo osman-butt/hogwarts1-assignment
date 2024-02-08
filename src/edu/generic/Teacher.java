@@ -1,6 +1,6 @@
 package edu.generic;
 
-import edu.hogwarts.data.EmpType;
+import edu.hogwarts.model.EmpType;
 
 import java.time.LocalDate;
 
