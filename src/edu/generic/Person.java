@@ -1,30 +1,42 @@
 package edu.generic;
 
+import java.util.UUID;
+
 public class Person {
     private String firstName;
     private String lastName;
     private String middleName;
 
+    private UUID id;
+
     public Person() {}
 
     public Person(String fullName) {
         setFullName(fullName);
+        this.id = UUID.randomUUID();
     }
 
     public Person(String firstName,String lastName) {
         this(firstName, null, lastName);
+        this.id = UUID.randomUUID();
     }
 
     public Person(String firstName, String middleName,String lastName) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
+        this.id = UUID.randomUUID();
     }
 
     public Person(Person person) {
         this.firstName = person.getFirstName();
         this.middleName = person.getMiddleName();
         this.lastName = person.getLastName();
+        this.id = UUID.randomUUID();
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public String getFirstName() {
