@@ -3,13 +3,14 @@ package edu.hogwarts.application;
 import edu.hogwarts.controller.StudentController;
 import edu.hogwarts.controller.TeacherController;
 import edu.hogwarts.model.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
 
 public class InitApp {
-    StudentController studentController;
-    TeacherController teacherController;
-    public InitApp(StudentController studentController, TeacherController teacherController) {
+    private final StudentController studentController;
+    private final TeacherController teacherController;
+    public InitApp(@NotNull StudentController studentController, @NotNull TeacherController teacherController) {
         this.studentController = studentController;
         this.teacherController = teacherController;
     }
