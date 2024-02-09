@@ -1,6 +1,8 @@
 package edu.hogwarts.model;
 
-public class House {
+import org.jetbrains.annotations.NotNull;
+
+public class House implements Comparable<House> {
     private String name;
     private String founder;
     private String[] colors;
@@ -37,5 +39,10 @@ public class House {
 
     public String toString() {
         return getName();
+    }
+
+    @Override
+    public int compareTo(@NotNull House o) {
+        return this.getName().compareTo(o.getName());
     }
 }
