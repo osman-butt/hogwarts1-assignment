@@ -47,6 +47,9 @@ public class HogwartsPersonUtils {
 //    Method to filter a List of HogwartsPerson on HouseType and RoleType.
 //    The method does not mutate the original List
     public static List<HogwartsPerson> filter(List<HogwartsPerson> personList, HouseType house, RoleType role) {
+        if (house == null && role == null) {
+            return personList;
+        }
         if(house != null && role == null) {
             return filter(personList,house);
         }
