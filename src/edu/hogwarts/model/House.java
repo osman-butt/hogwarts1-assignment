@@ -1,23 +1,24 @@
 package edu.hogwarts.model;
 
+import edu.hogwarts.utils.HouseType;
 import org.jetbrains.annotations.NotNull;
 
 public class House implements Comparable<House> {
-    private String name;
+    private HouseType name;
     private String founder;
     private String[] colors;
 
-    public House(String name, String founder, String[] colors) {
+    public House(HouseType name, String founder, String[] colors) {
         this.name = name;
         this.founder = founder;
         this.colors = colors;
     }
 
-    public String getName() {
+    public HouseType getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(HouseType name) {
         this.name = name;
     }
 
@@ -38,7 +39,7 @@ public class House implements Comparable<House> {
     }
 
     public String toString() {
-        return getName();
+        return getName().toString();
     }
 
     @Override

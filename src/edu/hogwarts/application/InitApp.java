@@ -3,6 +3,7 @@ package edu.hogwarts.application;
 import edu.hogwarts.controller.StudentController;
 import edu.hogwarts.controller.TeacherController;
 import edu.hogwarts.model.*;
+import edu.hogwarts.utils.HouseType;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
@@ -22,10 +23,10 @@ public class InitApp {
 
     private void initStudentsData() {
         // Create House
-        House gryffindor = new House("Gryffindor","Godric Gryffindor", new String[]{"Red","Yellow"});
-        House ravenclaw = new House("Ravenclaw","Rowena Ravenclaw",new String[]{"Blue","Bronze"});
-        House slytherin = new House("Slytherin","Salazar Slytherin",new String[]{"Green","Silver"} );
-        House hufflepuff = new House("Hufflepuff","Helga Hufflepuff",new String[]{"Yellow","Black"} );
+        House gryffindor = new House(HouseType.GRYFFINDOR,"Godric Gryffindor", new String[]{"Red","Yellow"});
+        House ravenclaw = new House(HouseType.RAVENCLAW,"Rowena Ravenclaw",new String[]{"Blue","Bronze"});
+        House slytherin = new House(HouseType.SLYTHERIN,"Salazar Slytherin",new String[]{"Green","Silver"} );
+        House hufflepuff = new House(HouseType.HUFFLEPUFF,"Helga Hufflepuff",new String[]{"Yellow","Black"} );
         // Create Hogwarts students
         studentController.create(new HogwartsStudent("Harry James Potter","1980-01-01",1991,0,false,gryffindor,false,null));
         studentController.create(new HogwartsStudent("Ron Weasley","1981-02-12",1991,0,false,gryffindor,false,null));
@@ -45,7 +46,7 @@ public class InitApp {
         // Create House
 //        House gryffindor = new House("Gryffindor","Godric Gryffindor", new String[]{"Red","Yellow"});
 //        House ravenclaw = new House("Ravenclaw","Rowena Ravenclaw",new String[]{"Blue","Bronze"});
-        House slytherin = new House("Slytherin","Salazar Slytherin",new String[]{"Green","Silver"} );
+        House slytherin = new House(HouseType.SLYTHERIN,"Salazar Slytherin",new String[]{"Green","Silver"} );
 //        House hufflepuff = new House("Hufflepuff","Helga Hufflepuff",new String[]{"Yellow","Black"} );
         // Create Hogwarts Teacher
         teacherController.create(new HogwartsTeacher("Horace Slughorn","1949-07-26", EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"),slytherin,true));
