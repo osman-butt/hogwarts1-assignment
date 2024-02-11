@@ -145,12 +145,12 @@ public class UserInterface {
     }
 
     private void sortList(SortNameType sortName, boolean isDescending) {
-        String TABLE_FORMAT = "| %-15s | %-15s | %-15s | %-12s | %-7d | %-10s |%n";
-        String ROW_SEP = "+-----------------+-----------------+-----------------+--------------+---------+------------+%n";
+        String TABLE_FORMAT = "| %-15s | %-22s | %-15s | %-12s | %-7d | %-10s |%n";
+        String ROW_SEP = "+-----------------+------------------------+-----------------+--------------+---------+------------+%n";
 
         // TABLE HEADER
         System.out.format(ROW_SEP);
-        System.out.format("| First name (1)  | Middle name (2) | Last name (3)   | House (4)    | Age (5) | Role (6)   |%n");
+        System.out.format("| First name (1)  | Middle name (2)        | Last name (3)   | House (4)    | Age (5) | Role (6)   |%n");
         System.out.format(ROW_SEP);
 
         // GET LISTS
@@ -166,12 +166,12 @@ public class UserInterface {
     }
 
     private void filterList(HouseType house, RoleType role) {
-        String TABLE_FORMAT = "| %-15s | %-15s | %-15s | %-12s | %-7d | %-10s |%n";
-        String ROW_SEP = "+-----------------+-----------------+-----------------+--------------+---------+------------+%n";
+        String TABLE_FORMAT = "| %-15s | %-22s | %-15s | %-12s | %-7d | %-10s |%n";
+        String ROW_SEP = "+-----------------+------------------------+-----------------+--------------+---------+------------+%n";
 
         // TABLE HEADER
         System.out.format(ROW_SEP);
-        System.out.format("| First name (1)  | Middle name (2) | Last name (3)   | House (4)    | Age (5) | Role (6)   |%n");
+        System.out.format("| First name (1)  | Middle name (2)        | Last name (3)   | House (4)    | Age (5) | Role (6)   |%n");
         System.out.format(ROW_SEP);
 
         // GET LISTS
