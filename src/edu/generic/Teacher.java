@@ -9,22 +9,22 @@ public class Teacher extends Person {
     private LocalDate employmentStart;
     private LocalDate employmentEnd;
 
-    public Teacher(String fullName, EmpType employment, LocalDate employmentStart, LocalDate employmentEnd) {
-        super(fullName);
+    public Teacher(String fullName, String birthDay, EmpType employment, LocalDate employmentStart, LocalDate employmentEnd) {
+        super(fullName,birthDay);
         this.employment = employment;
         this.employmentStart = employmentStart;
         this.employmentEnd = employmentEnd;
     }
 
-    public Teacher(String firstName, String lastName, EmpType employment, LocalDate employmentStart, LocalDate employmentEnd) {
-        super(firstName, lastName);
+    public Teacher(String firstName, String lastName, String birthDay, EmpType employment, LocalDate employmentStart, LocalDate employmentEnd) {
+        super(firstName, lastName,birthDay);
         this.employment = employment;
         this.employmentStart = employmentStart;
         this.employmentEnd = employmentEnd;
     }
 
-    public Teacher(String firstName, String middleName, String lastName, EmpType employment, LocalDate employmentStart, LocalDate employmentEnd) {
-        super(firstName, middleName, lastName);
+    public Teacher(String firstName, String middleName, String lastName, String birthDay, EmpType employment, LocalDate employmentStart, LocalDate employmentEnd) {
+        super(firstName, middleName, lastName,birthDay);
         this.employment = employment;
         this.employmentStart = employmentStart;
         this.employmentEnd = employmentEnd;

@@ -1,30 +1,34 @@
 package edu.generic;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class Person {
     private String firstName;
     private String lastName;
     private String middleName;
+    private LocalDate birthDay;
 
     private UUID id;
 
     public Person() {}
 
-    public Person(String fullName) {
+    public Person(String fullName, String birthDay) {
         setFullName(fullName);
+        setBirthDay(birthDay);
         this.id = UUID.randomUUID();
     }
 
-    public Person(String firstName,String lastName) {
-        this(firstName, null, lastName);
+    public Person(String firstName, String lastName, String birthDay) {
+        this(firstName, null, lastName, birthDay);
         this.id = UUID.randomUUID();
     }
 
-    public Person(String firstName, String middleName,String lastName) {
+    public Person(String firstName, String middleName,String lastName, String birthDay) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
+        setBirthDay(birthDay);
         this.id = UUID.randomUUID();
     }
 
@@ -32,6 +36,7 @@ public class Person {
         this.firstName = person.getFirstName();
         this.middleName = person.getMiddleName();
         this.lastName = person.getLastName();
+        this.birthDay = person.getBirthDay();
         this.id = UUID.randomUUID();
     }
 
@@ -56,11 +61,32 @@ public class Person {
     }
 
     public String getMiddleName() {
-        return middleName;
+        if(hasMiddleName()) {
+            return middleName;
+        } else {
+            return "";
+        }
     }
 
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
+    }
+
+    private LocalDate getBirthDay() {
+        return birthDay;
+    }
+
+    public int getAge() {
+        LocalDate today = LocalDate.parse("1992-01-01");
+        return birthDay.until(today).getYears();
+    }
+
+    public void setBirthDay(String birthDay) {
+        this.birthDay = LocalDate.parse(birthDay);
+    }
+
+    public void setBirthDay(LocalDate birthDay) {
+        this.birthDay = birthDay;
     }
 
     public String getFullName() {

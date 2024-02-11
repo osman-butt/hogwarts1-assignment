@@ -5,22 +5,22 @@ public class Student extends Person {
     private int graduationYear;
     private boolean graduated = false;
 
-    public Student(String fullName, int enrollmentYear, int graduationYear,boolean graduated) {
-        super(fullName);
+    public Student(String fullName, String birthDay, int enrollmentYear, int graduationYear,boolean graduated) {
+        super(fullName,birthDay);
         this.enrollmentYear = enrollmentYear;
         this.graduationYear = graduationYear;
         this.graduated = graduated;
     }
 
-    public Student(String firstName, String lastName, int enrollmentYear, int graduationYear,boolean graduated) {
-        super(firstName, lastName);
+    public Student(String firstName, String lastName, String birthDay, int enrollmentYear, int graduationYear,boolean graduated) {
+        super(firstName, lastName,birthDay);
         this.enrollmentYear = enrollmentYear;
         this.graduationYear = graduationYear;
         this.graduated = graduated;
     }
 
-    public Student(String firstName, String middleName, String lastName, int enrollmentYear, int graduationYear,boolean graduated) {
-        super(firstName, middleName, lastName);
+    public Student(String firstName, String middleName, String lastName, String birthDay, int enrollmentYear, int graduationYear,boolean graduated) {
+        super(firstName, middleName, lastName,birthDay);
         this.enrollmentYear = enrollmentYear;
         this.graduationYear = graduationYear;
         this.graduated = graduated;

@@ -8,22 +8,22 @@ public class HogwartsStudent extends Student implements HogwartsPerson {
     private boolean prefect;
     private String[] teams;
 
-    public HogwartsStudent(String fullName, int enrollmentYear, int graduationYear, boolean graduated, House house, boolean prefect, String[] teams) {
-        super(fullName, enrollmentYear, graduationYear,graduated);
+    public HogwartsStudent(String fullName,String birthDay, int enrollmentYear, int graduationYear, boolean graduated, House house, boolean prefect, String[] teams) {
+        super(fullName,birthDay, enrollmentYear, graduationYear,graduated);
         this.house = house;
         this.prefect = prefect;
         this.teams = teams;
     }
 
-    public HogwartsStudent(String firstName, String lastName, int enrollmentYear, int graduationYear, boolean graduated, House house, boolean prefect, String[] teams) {
-        super(firstName, lastName, enrollmentYear, graduationYear,graduated);
+    public HogwartsStudent(String firstName, String lastName, String birthDay, int enrollmentYear, int graduationYear, boolean graduated, House house, boolean prefect, String[] teams) {
+        super(firstName, lastName, birthDay, enrollmentYear, graduationYear,graduated);
         this.house = house;
         this.prefect = prefect;
         this.teams = teams;
     }
 
-    public HogwartsStudent(String firstName, String middleName, String lastName, int enrollmentYear, boolean graduated, int graduationYear, House house, boolean prefect, String[] teams) {
-        super(firstName, middleName, lastName, enrollmentYear, graduationYear,graduated);
+    public HogwartsStudent(String firstName, String middleName, String lastName, String birthDay, int enrollmentYear, boolean graduated, int graduationYear, House house, boolean prefect, String[] teams) {
+        super(firstName, middleName, lastName,birthDay, enrollmentYear, graduationYear,graduated);
         this.house = house;
         this.prefect = prefect;
         this.teams = teams;
