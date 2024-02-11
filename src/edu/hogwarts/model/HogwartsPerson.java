@@ -1,6 +1,6 @@
 package edu.hogwarts.model;
 
-import edu.generic.Role;
+import edu.generic.RoleType;
 
 public interface HogwartsPerson {
 
@@ -13,5 +13,5 @@ public interface HogwartsPerson {
     House getHouse();
     void setHouse(House house);
     int getAge();
-    Role getRole();
+    RoleType getRole();
 }
