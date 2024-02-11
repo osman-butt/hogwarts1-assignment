@@ -36,21 +36,24 @@ public class UserInterface {
             }
         }
     }
-    
+
+    private int getInputChoice(int lowestChoice, int highestChoice) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Choose from the list " + lowestChoice +"-"+highestChoice + ": ");
+        int choice = input.nextInt();
+        while (choice < lowestChoice || choice > highestChoice) {
+            System.out.print("Please enter a value between " + lowestChoice +"-"+highestChoice + ": ");
+            choice = input.nextInt();
+        }
+        return choice;
+    }
     public int mainMenu() {
         System.out.println("##### MAIN MENU #####");
         System.out.println("1: Show all students & teachers");
         System.out.println("2: Show sorted list");
         System.out.println("3: Show filtered list");
         System.out.println("0: Exit");
-        Scanner input = new Scanner(System.in);
-        System.out.print("Choose from the list 0-3: ");
-        int choice = input.nextInt();
-        while (choice < 0 || choice > 3) {
-            System.out.print("Please enter a value between 0-3: ");
-            choice = input.nextInt();
-        }
-        return choice;
+        return getInputChoice(0,3);
     }
 
     private void sortMenu() {
@@ -62,17 +65,11 @@ public class UserInterface {
         System.out.println("5: Sort by age");
         System.out.println("6: Sort by role");
         System.out.println("0: Main menu");
-        Scanner input = new Scanner(System.in);
-        System.out.print("Choose from the list 0-6: ");
-        int choice = input.nextInt();
-        while (choice < 0 || choice > 6) {
-            System.out.print("Please enter a value between 0-6: ");
-            choice = input.nextInt();
-        }
+        int choice = getInputChoice(0,6);
         if (choice > 0) {
-            Scanner input2 = new Scanner(System.in);
+            Scanner input = new Scanner(System.in);
             System.out.print("Do you want the list to be sorted decending (yes/no):");
-            String descending = input2.nextLine();
+            String descending = input.nextLine();
             boolean isDescending = descending.equalsIgnoreCase("yes");
             switch (choice) {
                 case 1:
@@ -98,9 +95,11 @@ public class UserInterface {
     }
 
     private void filterMenu() {
+        // List of available menu items
         HouseType[] HOUSE_TYPES = {HouseType.GRYFFINDOR,HouseType.HUFFLEPUFF,HouseType.RAVENCLAW,HouseType.SLYTHERIN};
         RoleType[] ROLE_TYPES = {RoleType.STUDENT,RoleType.TEACHER};
 
+        // Get filtered house
         System.out.println("##### FILTER BY HOUSE #####");
         System.out.println("1: GRYFFINDOR");
         System.out.println("2: HUFFLEPUFF");
@@ -108,39 +107,31 @@ public class UserInterface {
         System.out.println("4: SLYTHERIN");
         System.out.println("5: Show all houses");
         System.out.println("0: Main menu");
-        Scanner input = new Scanner(System.in);
-        System.out.print("Choose from the list 0-5: ");
-        int choiceHouse = input.nextInt();
-        while (choiceHouse < 0 || choiceHouse > 5) {
-            System.out.print("Please enter a value between 0-5: ");
-            choiceHouse = input.nextInt();
-        }
+        int choiceHouse = getInputChoice(0,5);
         if (choiceHouse == 0) {return;}
-        System.out.println("##### FILTER BY ROLE #####");
-        System.out.println("1: STUDENT");
-        System.out.println("2: TEACHER");
-        System.out.println("3: Show all roles");
-         System.out.println("0: Main menu");
-        Scanner input2 = new Scanner(System.in);
-        System.out.print("Choose from the list 0-3: ");
-        int choiceRole = input2.nextInt();
-        while (choiceRole < 0 || choiceRole > 3) {
-            System.out.print("Please enter a value between 0-3: ");
-            choiceRole = input.nextInt();
-        }
-        if (choiceRole == 0) {return;}
         HouseType houseType;
         if (choiceHouse != 5) {
             houseType = HOUSE_TYPES[(choiceHouse-1)];
         } else {
             houseType = null;
         }
+
+        // Get filtered role
+        System.out.println("##### FILTER BY ROLE #####");
+        System.out.println("1: STUDENT");
+        System.out.println("2: TEACHER");
+        System.out.println("3: Show all roles");
+         System.out.println("0: Main menu");
+        int choiceRole = getInputChoice(0,3);
+        if (choiceRole == 0) {return;}
         RoleType roleType;
         if (choiceRole != 3) {
             roleType = ROLE_TYPES[(choiceRole - 1)];
         } else {
             roleType = null;
         }
+
+        // Filter list
         filterList(houseType,roleType);
     }
 
