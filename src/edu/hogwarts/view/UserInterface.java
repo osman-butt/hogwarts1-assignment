@@ -17,9 +17,6 @@ public class UserInterface {
     private final StudentController studentController;
     private final TeacherController teacherController;
 
-    private final HouseType[] houseTypes = {HouseType.GRYFFINDOR,HouseType.HUFFLEPUFF,HouseType.RAVENCLAW,HouseType.SLYTHERIN};
-    private final RoleType[] roleTypes = {RoleType.STUDENT,RoleType.TEACHER};
-
     public UserInterface(@NotNull StudentController studentController, @NotNull TeacherController teacherController){
         this.studentController = studentController;
         this.teacherController = teacherController;
@@ -39,7 +36,7 @@ public class UserInterface {
             }
         }
     }
-
+    
     public int mainMenu() {
         System.out.println("##### MAIN MENU #####");
         System.out.println("1: Show all students & teachers");
@@ -101,6 +98,9 @@ public class UserInterface {
     }
 
     private void filterMenu() {
+        HouseType[] HOUSE_TYPES = {HouseType.GRYFFINDOR,HouseType.HUFFLEPUFF,HouseType.RAVENCLAW,HouseType.SLYTHERIN};
+        RoleType[] ROLE_TYPES = {RoleType.STUDENT,RoleType.TEACHER};
+
         System.out.println("##### FILTER BY HOUSE #####");
         System.out.println("1: GRYFFINDOR");
         System.out.println("2: HUFFLEPUFF");
@@ -131,13 +131,13 @@ public class UserInterface {
         if (choiceRole == 0) {return;}
         HouseType houseType;
         if (choiceHouse != 5) {
-            houseType = houseTypes[(choiceHouse-1)];
+            houseType = HOUSE_TYPES[(choiceHouse-1)];
         } else {
             houseType = null;
         }
         RoleType roleType;
         if (choiceRole != 3) {
-            roleType = roleTypes[(choiceRole - 1)];
+            roleType = ROLE_TYPES[(choiceRole - 1)];
         } else {
             roleType = null;
         }
