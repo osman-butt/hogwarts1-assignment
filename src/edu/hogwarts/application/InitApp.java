@@ -44,14 +44,14 @@ public class InitApp {
 
     private void initTeachersData() {
         // Create House
-//        House gryffindor = new House("Gryffindor","Godric Gryffindor", new String[]{"Red","Yellow"});
+        House gryffindor = new House(HouseType.GRYFFINDOR,"Godric Gryffindor", new String[]{"Red","Yellow"});
 //        House ravenclaw = new House("Ravenclaw","Rowena Ravenclaw",new String[]{"Blue","Bronze"});
         House slytherin = new House(HouseType.SLYTHERIN,"Salazar Slytherin",new String[]{"Green","Silver"} );
 //        House hufflepuff = new House("Hufflepuff","Helga Hufflepuff",new String[]{"Yellow","Black"} );
         // Create Hogwarts Teacher
-        teacherController.create(new HogwartsTeacher("Horace Slughorn","1949-07-26", EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"),slytherin,true));
-        teacherController.create(new HogwartsTeacher("Severus Snape","1946-06-29",EmpType.PROFESSOR, LocalDate.parse("1980-01-01"),LocalDate.parse("2005-01-01"),slytherin,false));
-
+        teacherController.create(new HogwartsTeacher("Horace Slughorn","1949-07-26", EmpType.PROFESSOR, LocalDate.parse("1985-01-01"),LocalDate.parse("2000-01-01"),slytherin,false));
+        teacherController.create(new HogwartsTeacher("Severus Snape","1946-06-29",EmpType.PROFESSOR, LocalDate.parse("1980-01-01"),LocalDate.parse("2005-01-01"),slytherin,true));
+        teacherController.create(new HogwartsTeacher("Albus Percival Wulfric Brian Dumbledore","1881-08-16",EmpType.PROFESSOR,LocalDate.parse("1971-01-01"),LocalDate.parse("1997-01-01"),gryffindor,false));
     }
 
 //    public void initCourseData() {
