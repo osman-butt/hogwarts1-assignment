@@ -144,7 +144,7 @@ public class UserInterface {
         filterList(houseType,roleType);
     }
 
-    private void sortList(SortNameType sortName, boolean isDescending) {
+    private void table(List<HogwartsPerson> list) {
         String TABLE_FORMAT = "| %-15s | %-22s | %-15s | %-12s | %-7d | %-10s |%n";
         String ROW_SEP = "+-----------------+------------------------+-----------------+--------------+---------+------------+%n";
 
@@ -153,36 +153,42 @@ public class UserInterface {
         System.out.format("| First name (1)  | Middle name (2)        | Last name (3)   | House (4)    | Age (5) | Role (6)   |%n");
         System.out.format(ROW_SEP);
 
-        // GET LISTS
-        List<HogwartsPerson> listSorted = new ArrayList<>(teacherController.getAll());
-        listSorted.addAll(studentController.getAll());
-        HogwartsPersonUtils.sort(listSorted,sortName,isDescending);
-
         // TABLE ROWS
-        for (HogwartsPerson person : listSorted) {
+        for (HogwartsPerson person : list) {
             System.out.format(TABLE_FORMAT, person.getFirstName(), person.getMiddleName(), person.getLastName(), person.getHouse(), person.getAge(), person.getRole());
         }
         System.out.format(ROW_SEP);
     }
 
+    private void sortList(SortNameType sortName, boolean isDescending) {
+        // GET LISTS
+        List<HogwartsPerson> listSorted = new ArrayList<>(teacherController.getAll());
+        listSorted.addAll(studentController.getAll());
+        HogwartsPersonUtils.sort(listSorted,sortName,isDescending);
+        // Display table
+        System.out.println();
+        String directionMsg = isDescending ? "desc" : "asc";
+        System.out.println("Table sorted by " + sortName.toString() + " (" + directionMsg + ")");
+        table(listSorted);
+    }
+
     private void filterList(HouseType house, RoleType role) {
-        String TABLE_FORMAT = "| %-15s | %-22s | %-15s | %-12s | %-7d | %-10s |%n";
-        String ROW_SEP = "+-----------------+------------------------+-----------------+--------------+---------+------------+%n";
-
-        // TABLE HEADER
-        System.out.format(ROW_SEP);
-        System.out.format("| First name (1)  | Middle name (2)        | Last name (3)   | House (4)    | Age (5) | Role (6)   |%n");
-        System.out.format(ROW_SEP);
-
         // GET LISTS
         List<HogwartsPerson> list = new ArrayList<>(teacherController.getAll());
         list.addAll(studentController.getAll());
-        var listFiltered = HogwartsPersonUtils.filter(list,house,role);
-
-        // TABLE ROWS
-        for (HogwartsPerson person : listFiltered) {
-            System.out.format(TABLE_FORMAT, person.getFirstName(), person.getMiddleName(), person.getLastName(), person.getHouse(), person.getAge(), person.getRole());
+        List<HogwartsPerson> listFiltered = HogwartsPersonUtils.filter(list,house,role);
+        // Display table
+        System.out.println();
+        StringBuilder filterMessage = new StringBuilder();
+        filterMessage.append("Table filtered by ");
+        if (house != null) {
+            filterMessage.append(house.toString());
+        };
+        if (role != null) {
+            filterMessage.append(" ");
+            filterMessage.append(role.toString());
         }
-        System.out.format(ROW_SEP);
+        System.out.println(filterMessage);
+        table(listFiltered);
     }
 }
