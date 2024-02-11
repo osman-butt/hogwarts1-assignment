@@ -8,7 +8,7 @@ public class Teacher extends Person {
     private EmpType employment;
     private LocalDate employmentStart;
     private LocalDate employmentEnd;
-    private final Role role = Role.TEACHER;
+    private final RoleType roleType = RoleType.TEACHER;
 
     public Teacher(String fullName, String birthDay, EmpType employment, LocalDate employmentStart, LocalDate employmentEnd) {
         super(fullName,birthDay);
@@ -55,8 +55,8 @@ public class Teacher extends Person {
         this.employmentEnd = employmentEnd;
     }
 
-    public Role getRole() {
-        return role;
+    public RoleType getRole() {
+        return roleType;
     }
 
     public String toString() {

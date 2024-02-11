@@ -1,6 +1,6 @@
 package edu.generic;
 
-public enum Role {
+public enum RoleType {
     STUDENT,
     TEACHER
 }

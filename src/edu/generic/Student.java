@@ -4,7 +4,7 @@ public class Student extends Person {
     private int enrollmentYear;
     private int graduationYear;
     private boolean graduated = false;
-    private final Role role = Role.STUDENT;
+    private final RoleType roleType = RoleType.STUDENT;
 
     public Student(String fullName, String birthDay, int enrollmentYear, int graduationYear,boolean graduated) {
         super(fullName,birthDay);
@@ -58,8 +58,8 @@ public class Student extends Person {
         this.graduated = graduated;
     }
 
-    public Role getRole() {
-        return role;
+    public RoleType getRole() {
+        return roleType;
     }
 
     public String toString() {
